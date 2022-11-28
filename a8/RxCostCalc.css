@@ -1,0 +1,19 @@
+input[type=number],
+select {
+    width: 250px;
+    display: block;
+    /* padding: 12px 20px; 
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box; */
+}
+
+.column {
+    float: left;
+    width: 25%;
+}
+
+fieldset {
+    border: none;
+}
