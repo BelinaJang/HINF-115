@@ -1,0 +1,58 @@
+<!-- Exercise 1: why the moment_exercise.js file works even though it appears to be “loaded in the wrong place?” -->
+<!-- Moment is loaded at the top, but it is to store the moment library, not to read from the code below and execute methods. -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HINF115 A9 Moment Exercises</title>
+
+    <script src="moment/moment-with-locales.js"></script>
+    <script src="moment_exercise.js"></script>
+
+    <script>
+        // Exercise 2
+        console.log("Today: " + moment().format("YYYY-MM-DD"));
+        console.log(moment.weekdaysShort());
+
+        let monthsShortStr = 'Jan_Feb_Mar_Apr_May_Jun_Jul_Aug_Sep_Oct_Nov_Dec';
+        let monthsShortArr = monthsShortStr.split('_');
+        console.log(monthsShortArr);
+
+        // Exercise 3
+        console.log("10 days from now: " + moment().add(10, "days").format("YYYY-MM-DD"));
+
+        // Exercise 4
+        let dob = moment("2000-12-06");
+
+        console.log("You are " + moment.duration(moment()-dob).years() + " years, " + 
+        moment.duration(moment()-dob).months() + " months, " +
+        moment.duration(moment()-dob).weeks() + " weeks, " +
+        moment.duration(moment()-dob).days() + " days, " +
+        moment.duration(moment()-dob).hours() + " hours, " +
+        moment.duration(moment()-dob).minutes() + " minutes and " +
+        moment.duration(moment()-dob).seconds() + " seconds old.");
+
+        console.log("You are " + Math.floor(moment.duration(moment()-dob).asYears()) + " years old");
+        console.log("You are " + Math.floor(moment.duration(moment()-dob).asMonths()) + " months old");
+        console.log("You are " + Math.floor(moment.duration(moment()-dob).asSeconds()) + " seconds old");
+
+        ;
+        
+        // Exercise 5
+        console.log("a: " + moment().format("h:mma"));
+        console.log("b: " + moment().format("YYYY-MM-DD"));
+        console.log("c: " + moment().format("YYYY-MM-DD HH:mm"));
+        console.log("d: " + moment().format("dddd, Do MMMM YYYY hA"));
+        console.log("e: " + moment().format("dddd") + ", this is " + moment().format("Do") +  " day of the week");
+
+
+    </script>
+</head>
+<body>
+    <h1 id="moment_test">Foo</h1>
+    
+</body>
+</html>
