@@ -1,0 +1,140 @@
+body {
+    font-family: "Century Gothic", Verdana;
+    font-size: 13px;
+    color: #626258;
+    background-color: lightgray;
+    width: 80%;
+    margin: 10px auto;
+}
+
+h1,legend {
+    font-family: Britannic, "Trebuchet MS";
+    font-size: 20px;
+}
+
+h1 {
+    color: #f8f8e7;
+    font-size: 30px;
+}
+
+legend {
+    color: #f8f8e7;
+    background-color: cadetblue;
+    padding: 5px 10px;
+}
+
+fieldset {
+    background-color: beige;
+    margin: 10px auto;
+    padding: 5px 0px 30px 30px;
+    border: 0;
+    border-radius: 20px;
+}
+
+header p {
+    color: #f8f8e7;
+}
+
+input {
+    margin: 8px 3px;
+    border: none;
+    border-bottom: 2px solid lightblue;
+    padding: 10px 15px 5px 15px;
+    color: #272723;
+    background-color: beige;
+}
+
+label {
+    /* margin: 8px 3px; */
+    padding-right: 5px;
+    padding-bottom: 5px;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+header {
+    display: block;
+    background-color: cadetblue;
+    margin: 10px auto;
+    padding: 5px 30px 10px 30px;
+    border-radius: 20px;
+}
+
+.symptoms span {
+    margin-left: 20px;
+    display: inline-block;
+    width: 200px;
+}
+
+.symptoms mediq {
+    border-bottom: 1px solid lightgray;
+    padding-bottom: 5px;
+}
+
+.signoff_inline {
+    display: inline;
+    padding-right: 30px;
+}
+
+.blockcenter {
+    margin: 0 auto; 
+    display: block;
+}
+
+#weight, #height {
+    padding: 10px 5px 5px 15px;
+    width: 55px;
+}
+
+#age {
+    display: inline;
+    
+}
+
+#allergy {
+    width: 400px;
+}
+
+input:hover, input[type=radio] + label:hover {    
+    background-color: #cae6ef;
+    border-radius: 5px;
+}
+
+input[type=submit] {
+    color: #ffffff;
+    background-color: cadetblue;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+input[type=submit]:hover {
+    color: #ffffff;
+    background-color: #304f50;
+}
+
+input[type=date] {
+    font-family: "Century Gothic", Verdana;
+    color: #626258;
+}
+
+select {
+    font-family: "Century Gothic", Verdana;
+    font-size: 13px;
+    color: #626258;
+    background-color: beige;
+    border: none;
+    border-bottom: 2px solid lightblue;
+    margin-top: 15px;
+    padding: 3px;
+}
+
+
+@media all and (max-width: 800px) {
+    body {
+        width: 650px;
+    }
+}
