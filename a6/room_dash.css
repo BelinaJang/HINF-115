@@ -1,0 +1,84 @@
+/* 
+    Styles for the Hospital Room Dashboard
+    room_dash.css
+    Author's Names 
+*/
+
+root {
+    display: block;
+}
+
+body {
+    text-align: center;
+}
+
+p {
+    font-family: monospace;
+}
+
+table {
+    margin: auto;
+}
+
+td {
+    height: 50px;
+    border: 1px solid black;
+    font-size: 40px;
+    text-align: center;
+    font-family: arial, helvetica, sans-serif;
+}
+
+.maternity td {
+    background-color: rgba(0, 128, 0, 0.5);
+}
+
+.maternity td.occupied {
+    background-color: green;
+}
+
+
+.neonatal td {
+    background-color: #aa98a980;
+}
+
+.neonatal td.occupied {
+    background-color: #a385a2;
+}
+
+
+.nephrology td {
+    background-color: rgba(128, 0, 128, 0.5);
+}
+
+.nephrology td.occupied {
+    background-color: purple;
+}
+
+.oncology td {
+    background-color: rgba(165, 42, 42, 0.5);
+}
+
+.oncology td.occupied {
+    background-color: brown;
+}
+
+.icu td {
+    background-color: rgba(255, 0, 0, 0.5);
+}
+
+.icu td.occupied {
+    background-color: red;
+}
+
+
+.maternity td.repair, .neonatal td.repair, .nephrology td.repair, .oncology td.repair, .icu td.repair {
+    background-color: gray;
+}
+
+.maternity td.construction, .neonatal td.construction, .nephrology td.construction, .oncology td.construction, .icu td.construction {
+    background-color: darkgray;
+}
+
+.maternity td.cleanup, .neonatal td.cleanup, .nephrology td.cleanup, .oncology td.cleanup, .icu td.cleanup {
+    background-color: black;
+}

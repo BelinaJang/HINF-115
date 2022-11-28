@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<!-- 
+Exercise 1:
+All the squares work. All the squares change color between yellow and white when clicked.
+
+There is one error when you open the page, but when you refresh the page, it disappears, so the error is not from the code.
+They could be from extensions of the web browser.
+
+There is a message in console: (5) [Array(5), Array(5), Array(5), Array(5), Array(5)]
+This is from the "console.log(rooms_arr)" in the JavaScript code (line 9).
+
+When the squares are clicked, ".addEventListener" detects the click and calls the function "updateRoom(id)".
+The "updateRoom(id)" function toggles the class of the room between "occupied" and no class every time the funtion is called.
+So, when it's white(no class), it changes to yellow(class: occupied) when it's clicked and vice versa. 
+ -->
+
+
+<html>
+
+<head>
+    <link href="room_dash.css" rel="stylesheet">
+    <title>Room Dashboard</title>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Unit</th>
+                <th>Room 00</th>
+                <th>Room 01</th>
+                <th>Room 02</th>
+                <th>Room 03</th>
+                <th>Room 04</th>
+                <th>Room 05</th>
+                <th>Room 06</th>
+                <th>Room 07</th>
+                <th>Room 08</th>
+                <th>Room 09</th>
+            </tr>
+        </thead>
+
+        <div class="test">
+        <tr class="maternity">
+            <th>Maternity</th>
+            <td id="unit01-room00"></td>
+            <td id="unit01-room01"></td>
+            <td id="unit01-room02"></td>
+            <td id="unit01-room03"></td>
+            <td id="unit01-room04"></td>
+        </tr>
+        <tr class="neonatal">
+            <th>Neonatal</th>
+            <td id="unit02-room00"></td>
+            <td id="unit02-room01"></td>
+            <td id="unit02-room02"></td>
+            <td id="unit02-room03"></td>
+            <td id="unit02-room04"></td>
+            <td id="unit02-room05"></td>
+        </tr>
+        <tr class="nephrology">
+            <th>Nephrology</th>
+            <td id="unit03-room00"></td>
+            <td id="unit03-room01"></td>
+            <td id="unit03-room02"></td>
+            <td id="unit03-room03"></td>
+            <td id="unit03-room04"></td>
+            <td id="unit03-room05" class="unusable repair"></td>
+            <td id="unit03-room06"></td>
+            <td id="unit03-room07"></td>
+            <td id="unit03-room08"></td>
+            <td id="unit03-room09"></td>
+        </tr>
+        <tr class="oncology">
+            <th>Oncology</th>
+            <td id="unit04-room00"></td>
+            <td id="unit04-room01"></td>
+            <td id="unit04-room02"></td>
+            <td id="unit04-room03"></td>
+            <td id="unit04-room04"></td>
+            <td id="unit04-room05"></td>
+            <td id="unit04-room06"></td>
+        </tr>
+        <tr class="icu">
+            <th>Intensive Care</th>
+            <td id="unit05-room00"></td>
+            <td id="unit05-room01"></td>
+            <td id="unit05-room02"></td>
+            <td id="unit05-room03"></td>
+            <!-- two partially equipped rooms (under construction) -->
+            <td id="unit05-room04" class="unusable construction"></td> 
+            <td id="unit05-room05" class="unusable construction"></td>
+        </tr>
+        </div>
+        
+    </table>
+    <script src="room_dash.js" async></script>
+</body>
+
+</html>
