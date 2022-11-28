@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>RxTool</title>
+
+    <link href="RxCostCalc.css" type="text/css" rel="stylesheet">
+    <link href="calculator-style.css" type="text/css" rel="stylesheet">
+    <script src="RxCostCalc.js" type="text/javascript"></script>
+    <script src="RxSchedule.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+    <div class="column">
+
+        <h2> Prescription Cost Calculator </h2>
+
+        <form>
+            <fieldset>
+                <label for="tax-rate">Tax Rate: </label>
+                <input type="number" id="tax-rate" value="0.08" onchange="setRemainingBudget()">
+            </fieldset>
+
+            <fieldset>
+                <label for="pill-price">Pill Price: </label>
+                <input type="number" id="pill-price" value="0.125" onchange="setRemainingBudget()">
+            </fieldset>
+
+            <fieldset>
+                <label for="dispensing-fees">Dispensing Fees: </label>
+                <input type="number" id="dispensing-fees" value="9.99" onchange="setRemainingBudget()">
+            </fieldset>
+
+            <fieldset>
+                <label for="pill-count">Pill Count: </label>
+                <input type="number" id="pill-count" value="0" onchange="setRemainingBudget(); populateSchedule();">
+                <!-- <input type="number" id="pill-count" value="0" onchange="setRemainingBudget()"> -->
+            </fieldset>
+
+            <fieldset>
+                <label for="patient-budget">Patient Budget: </label>
+                <input type="number" id="patient-budget" value="0" onchange="setRemainingBudget()">
+            </fieldset>
+
+            <fieldset>
+                <label for="remaining-budget">Remaining Budget: </label>
+                <input type="number" id="remaining-budget" readonly>
+            </fieldset>
+        </form>
+        <input type="button" onclick="location.href='index.html';" value="Health Record">
+    </div>
+
+    <div class="column">
+        <h2>Rx Schedule Setup</h2>
+
+        <fieldset>
+            <label for="dose-amount">Pills per dose: </label>
+            <input type="number" id="dose-amount" min="1" value="1" onchange="populateSchedule()"> <!-- Belina: Only accept positive input values-->
+        </fieldset>
+
+        <fieldset>
+            <label for="dose-freq">Dose frequency: </label>
+            <select id="dose-freq" onchange="populateSchedule()">
+                <option value="daily">Daily</option>
+                <option value="twiceAday">Twice a day</option>
+                <option value="everytwodays">Every two days</option>
+                <option value="weekly">Weekly</option>
+            </select>
+        </fieldset>
+
+        <h2>Rx Schedule</h2>
+        <div id="schedule"></div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="index-style.css" type="text/css" rel="stylesheet">
+</head>
+
+<body>
+
+    <h1>Electronic Health Record</h1>
+
+    <h2>Admin Page</h2>
+
+    <h3>Appointments</h3>
+    <table id="appts">
+        <caption>Appointments booked in the EHR system</caption>
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Date of Visit</th>
+                <th>Time of Visit</th>
+                <th>Follow-up</th>
+                <th>Doctor</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>2022-09-02</td>
+                <td>13:00</td>
+                <td>...</td>
+                <td></td>
+            </tr>
+        </tbody>
+
+        
+    </table>
+
+    <h3>Patients</h3>
+    <table id="patients">
+        <caption>This table shows patients registered in the EHR system</caption>
+        <thead>
+            <tr>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>DOB</th>
+                <th>Age</th> 
+                <th>Date of Last Visit</th>
+                <th>Time of Last Visit</th>
+                <th>Doctor last Visited</th>
+                <th>Health Card</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>John</td>
+                <td>Doe</td>
+                <td>1966-01-02</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td><a href="healthcard_john_doe.html">View</a></td>
+            </tr>
+            
+            <tr>
+                <td>Anna</td>
+                <td>Smith</td>
+                <td>1988-04-25</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+                <td>...</td>
+            </tr>
+        </tbody>
+
+        
+    </table>
+
+
+    <h3>Clinicians</h3>
+    <table id="clinicians">
+        <caption>Clinicians registered in the EHR system</caption>
+        <thead>
+            <tr>
+                <th>Last Name</th>
+                <th>First Name</th>
+                <th>Specialty</th>
+                <th>ID Number</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Payne</td>
+                <td>Bob</td>
+                <td>Dentist</td>
+                <td>11442233</td>
+            </tr>
+        </tbody>
+        
+    </table>
+
+    <input type="button" onclick="location.href='Calculator.html';" value="Prescription Calculator" />
+
+    <script>
+        // Get table bodies
+        let apptsTable = document.getElementById("appts").getElementsByTagName('tbody')[0];
+        let patientsTable = document.getElementById("patients").getElementsByTagName('tbody')[0];
+        let cliniciansTable = document.getElementById("clinicians").getElementsByTagName('tbody')[0];
+
+        // For appts, calculate follow-up date and time and insert into table
+        for (let i = 0; i < apptsTable.rows.length; i++) {
+            let date = new Date(apptsTable.rows[i].cells[2].innerHTML);
+            let time = apptsTable.rows[i].cells[3].innerHTML.split(':');
+            date.setDate(date.getDate() + 8);
+            date.setHours(time[0]);
+            date.setMinutes(time[1]);
+            apptsTable.rows[i].cells[4].innerHTML = date.toISOString().slice(0, 10) + " " + date.toTimeString().slice(0, 5);
+        }
+
+        // For patients, calculate age and insert into table
+        for (let i = 0; i < patientsTable.rows.length; i++) {
+            let dob = new Date(patientsTable.rows[i].cells[2].innerHTML);
+            let age = new Date().getFullYear() - dob.getFullYear();
+            patientsTable.rows[i].cells[3].innerHTML = age;
+        }
+
+        // TODO for future weeks, use JS to insert data into table? (eg. from a db / json file)
+
+
+    </script>
+
+</body>
+</html>
